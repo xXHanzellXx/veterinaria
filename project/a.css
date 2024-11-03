@@ -1,0 +1,35 @@
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Mantener el modal en la pantalla */
+    z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fff; /* Fondo blanco para el contenido del modal */
+    margin: 15% auto; /* Centrando el modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Máximo ancho del modal */
+}
+
+.close {
+    color: #aaa; /* Color del botón de cierre */
+    float: right; /* Alinear a la derecha */
+    font-size: 28px; /* Tamaño del icono de cerrar */
+    font-weight: bold; /* Negrita */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Color al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambiar el cursor */
+}

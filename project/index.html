@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Productos</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="body">
+        <header>
+            <div class="sidebar" id="promoSidebar">
+                <button class="close-button" onclick="toggleSidebar()">✖</button>
+                <h2>Promociones Especiales</h2>
+                <ul>
+                    <li>🐶 Comida para Perros a solo ₡15,000/kg</li>
+                    <li>🐱 Comida para Gatos a ₡12,000/kg</li>
+                    <li>🧼 Champú para Perros a ₡4,000</li>
+                    <li>🏠 Cama para Mascotas a ₡25,000</li>
+                    <li>🧴 Arena para Gatos a ₡7,000</li>
+                    <li>🦴 Snacks para Gatos a ₡6,000</li>
+                    <li>🧸 Juguete para Perros a ₡5,000</li>
+                    <li>👜 Transportadora para Mascotas a ₡30,000</li>
+                    <li>🔗 Collar para Perros a ₡3,000</li>
+                </ul>
+            </div>
+            <a href="/index.html"><img src="../Media/logo.png" alt="logo" id="logoI"></a>
+            <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Botón del menú hamburguesa -->
+            <nav id="navbar">
+                <a> <button id="theme-toggle" class="theme-toggle">Modo Oscuro</button> </a>
+                <a href="/index.html">Inicio</a>
+                <a href="/html/productos.html">Ver Productos</a>
+                <a href="../HTML/admin.html" id="admin-link" style="display: none;">Administrar</a>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const productsLink = document.getElementById("admin-link");
+                        const loggedInUser = localStorage.getItem("loggedInUser");
+                        if (loggedInUser === "admin") {
+                            productsLink.style.display = "block"; // Muestra el enlace de productos si el usuario es admin
+                        }
+                    });
+                </script>
+                <a href="../HTML/acercade.html" id="acercade-link">Acerca de</a>
+                <a href="../HTML/contactos.html" id="contactos-link">Contactos</a>
+                <a href="../HTML/ubicacion.html" id="ubicacion-link">Ubicación</a>
+                <a href="../HTML/historial.html" id="historial-link" style="display: none;">Ver Compras</a>
+                <a href="../HTML/login.html" id="login-link">Iniciar Sesión</a>
+                <a href="../HTML/register.html" id="register-link">Registrar</a>
+                <a href="#" id="logout-link" style="display: none;">Cerrar Sesión</a>
+                <a href="#" class="toggle-button" onclick="toggleSidebar()">Promociones</a> <!-- Cambiado a un enlace -->
+                <span id="welcome-message" style="display: none;"></span>
+            </nav>
+        </header>
+
+        <main>
+            <div class="fondo1">
+                <div class="container">
+                    <h1 class="title">Veterinaria Aserrí</h1>
+                    <h2>Servicios</h2>
+                    <ul class="services-list">
+                        <li>Consulta Veterinaria</li>
+                        <li>Vacunación</li>
+                        <li>Cirugías</li>
+                        <li>Nutrición</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <span>©Veterinaria Aserrí 2024 - todos los derechos reservados</span>
+
+        <div class="footerdiv">
+            <div class="footerdiv1">
+                <img class="footerlogo" src="/media/logo.png" style="border-radius: 5px; width: 200px; height: 150px;" alt="logo">
+            </div>
+            <div class="footerdiv2">
+                <h3 class="headline footer">Servicio al Cliente</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Métodos de pago</a></li>
+                    <li><a href="#">Entregas y devoluciones</a></li>
+                    <li><a href="#">Políticas de cookies</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footerdiv2">
+                <h3 class="headline footer">Contáctenos</h3>
+                <ul>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:2230-5200" class="ng-binding">2230-5222</a></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:superaserri@superaserri.com" class="ng-binding">superaserri@superaserri.com</a></li>
+                    <li><a href="/html/contactos.html"><i class="fa fa-comment" aria-hidden="true"></i>Contáctenos</a></li>
+                    <li><a href="/html/preguntas.html"><i class="fa fa-question-circle" aria-hidden="true">Preguntas frecuentes</i></a></li>
+                    <li><a href="/html/ubicacion.html"><i class="fas fa-store" aria-hidden="true"></i>Veterinarias</a></li>
+                    <li><a href="/html/acercade.html"><i class="fas fa-building" aria-hidden="true">¿Quiénes somos?</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="/JS/script.js"></script>
+</body>
+</html>

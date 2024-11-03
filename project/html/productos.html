@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="sidebar" id="promoSidebar">
+            <button class="close-button" onclick="toggleSidebar()">✖</button>
+            <h2>Promociones Especiales</h2>
+            <ul>
+                <li>🐶 Comida para Perros a solo ₡15,000/kg</li>
+                <li>🐱 Comida para Gatos a ₡12,000/kg</li>
+                <li>🧼 Champú para Perros a ₡4,000</li>
+                <li>🏠 Cama para Mascotas a ₡25,000</li>
+                <li>🧴 Arena para Gatos a ₡7,000</li>
+                <li>🦴 Snacks para Gatos a ₡6,000</li>
+                <li>🧸 Juguete para Perros a ₡5,000</li>
+                <li>👜 Transportadora para Mascotas a ₡30,000</li>
+                <li>🔗 Collar para Perros a ₡3,000</li>
+            </ul>
+        </div>
+        <a href="/index.html"><img src="../Media/logo.png" alt="logo" id="logoI"></a>
+        <button class="hamburger" id="hamburger-btn">&#9776;</button> <!-- Botón del menú hamburguesa -->
+        <nav id="navbar">
+            <a> <button id="theme-toggle" class="theme-toggle">Modo Oscuro</button> </a>
+            <a href="/index.html">Inicio</a>
+            <a href="/html/productos.html">Ver Productos</a>
+            <a href="../HTML/admin.html" id="admin-link" style="display: none;">Administrar</a>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const productsLink = document.getElementById("admin-link");
+    
+                    // Verifica si el usuario está logueado como administrador
+                    const loggedInUser = localStorage.getItem("loggedInUser");
+    
+                    if (loggedInUser === "admin") {
+                        productsLink.style.display = "block"; // Muestra el enlace de productos si el usuario es admin
+                    }
+                });
+            </script>
+            <a href="../HTML/acercade.html" id="acercade-link">Acerca de</a>
+            <a href="../HTML/contactos.html" id="contactos-link">Contactos</a>
+            <a href="../HTML/ubicacion.html" id="ubicacion-link">Ubicación</a>
+            <a href="../HTML/historial.html" id="historial-link" style="display: none;">Ver Compras</a>
+            <a href="../HTML/admin.html" id="productos-link" style="display: none;">Productos</a>
+            <a href="../HTML/login.html" id="login-link">Iniciar Sesión</a>
+            <a href="../HTML/register.html" id="register-link">Registrar</a>
+            <a href="#" id="logout-link" style="display: none;">Cerrar Sesión</a>
+            <a href="#" class="toggle-button" onclick="toggleSidebar()">Promociones</a> <!-- Cambiado a un enlace -->
+
+            <span id="welcome-message" style="display: none;"></span>
+        </nav>
+    </header>
+
+    <main>
+    <div class="product">
+        <h1 class="title">Productos</h1>
+        <section id="product-list" class="product-grid">
+            <!-- Aquí se mostrarán las tarjetas de productos -->
+        </section>
+            <!-- Modal del Carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p>Subtotal: <span id="cart-subtotal">₡0.00</span></p>
+            <p>IVA (13%): <span id="cart-tax">₡0.00</span></p>
+            <p>Total: <span id="cart-total">₡0.00</span></p>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <footer>
+        <!-- Aquí puedes incluir el mismo footer que en la otra página -->
+        <span>©Veterinaria Aserrí 2024 - todos los derechos reservados</span>
+    </footer>
+    <script src="/js/carrito.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

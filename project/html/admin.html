@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Administrador</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/index.html"><img src="../Media/logo.png" alt="logo" id="logoI"></a>
+        <button class="hamburger" id="hamburger-btn">&#9776;</button>
+        <nav id="navbar">
+            <a> <button id="theme-toggle" class="theme-toggle">Modo Oscuro</button> </a>
+            <a href="/index.html">Inicio</a>
+            <a href="/html/productos.html">Ver Productos</a>
+            <a href="../HTML/admin.html" id="admin-link" style="display: none;">Administrar</a>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const productsLink = document.getElementById("admin-link");
+    
+                    // Verifica si el usuario está logueado como administrador
+                    const loggedInUser = localStorage.getItem("loggedInUser");
+    
+                    if (loggedInUser === "admin") {
+                        productsLink.style.display = "block"; // Muestra el enlace de productos si el usuario es admin
+                    }
+                });
+            </script>
+            <a href="../HTML/acercade.html" id="acercade-link">Acerca de</a>
+            <a href="../HTML/contactos.html" id="contactos-link">Contactos</a>
+            <a href="../HTML/ubicacion.html" id="ubicacion-link">Ubicación</a>
+            <a href="../HTML/historial.html" id="historial-link" style="display: none;">Ver Compras</a>
+            <a href="../HTML/admin.html" id="productos-link" style="display: none;">Productos</a>
+            <a href="../HTML/login.html" id="login-link">Iniciar Sesión</a>
+            <a href="../HTML/register.html" id="register-link">Registrar</a>
+            <a href="#" id="logout-link" style="display: none;">Cerrar Sesión</a>
+            
+            <button id="cart-btn">Carrito (0)</button>
+            <span id="welcome-message" style="display: none;"></span>
+        </nav>
+    </header>
+    <main>
+    <div class="gest">
+        <h1>Gestión de Productos</h1>
+        <form id="add-product-form">
+            <input type="text" id="product-category" placeholder="Categoría" required>
+    <input type="text" id="product-name" placeholder="Nombre del Producto" required>
+    <input type="number" id="product-price" placeholder="Precio" required>
+    <textarea id="product-description" placeholder="Descripción" required></textarea>
+    <input type="number" id="product-quantity" placeholder="Cantidad" required>
+            <div class="file-upload-container">
+                <label class="file-upload-button">
+                    <span class="file-upload-icon">📁</span>
+                    Imagen del Producto
+                    <input type="file" id="product-image" accept="image/*" required />
+                </label>
+            </div>
+            <button  class="enviar" type="submit">Agregar Producto</button>
+        </form>
+    </div>
+    </main>
+<div class="p-list">
+    <h2>Lista de Productos</h2>
+    <div id="product-list" class="product-grid">
+        
+    </div>
+</div>
+        <footer>
+            <span>©Super Aserrí 2024 - todos los derechos reservados</span>
+
+            <div class="footerdiv">
+                <div class="footerdiv1">
+                    <img src="/media/logo.png"
+                        style="border-radius: 5px; width: 200px; height: 150px;"
+                        alt="logo">
+                </div>
+                <div class="footerdiv2">
+                    <h3 class="headline footer">Servicio al Cliente</h3>
+                    <ul class="footer-links">
+                        <!-- ul.footer-links>li*5>a[href="#"] -->
+                        <li><a href="#">Métodos de pago</a></li>
+                        <li><a href="#">Entregas y devoluciones</a></li>
+                        <li><a href="#">Politicas de cookies</a></li>
+                        <li><a href="#">Politicas de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="footerdiv2">
+                    <h3 class="headline footer">Contáctenos</h3>
+                    <ul>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i><a
+                                href="tel:2230-5200"
+                                class="ng-binding">2230-5222</a></li>
+                        <li><i class="fa fa-envelope" aria-hidden="true"></i><a
+                                href="mailto:superaserri@superaserri.com"
+                                class="ng-binding">superaserri@superaserri.com</a></li>
+                        <li><a href="/html/contactos.html"><i
+                                    class="fa fa-comment"
+                                    aria-hidden="true"></i>Contáctenos</a></li>
+                        <li><a href="/html/preguntas.html"><i
+                                    class="fa fa-question-circle"
+                                    aria-hidden="true">Preguntas
+                                    frecuentes</i></a></li>
+                        <li><a href="/html/ubicacion.html"><i
+                                    class="fas fa-store"
+                                    aria-hidden="true"></i>Supermercados</a></li>
+                        <li><a href="/html/acercade.html"><i
+                                    class="fas fa-building"
+                                    aria-hidden="true">¿Quiénes
+                                    somos?</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script src="/js/producto.js"></script>
+        <script src="/js/carrito.js"></script>
+        <script src="/JS/script.js"></script>
+    </body>
+</html>
