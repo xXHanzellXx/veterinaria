@@ -8,7 +8,7 @@ function loginUser(event) {
     const users = JSON.parse(localStorage.getItem('users')) || [];
     
     // Verificación del administrador
-    if (username === 'tutancamon' && password === 'TutNcamOn') {
+    if (username === '93828372' && password === 'TutNcamOn') {
         alert(`Bienvenido, administrador`);
         console.log("Administrador logueado");
         localStorage.setItem('loggedInUser', 'admin'); // guardar en el localStorage
